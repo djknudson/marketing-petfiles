@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetFiles — Pet Health Tracker &amp; Vaccination Reminders</title>
+  <meta name="description" content="Track your pet's vaccinations, vet appointments, and health records in one beautiful app. Free for iOS and Android.">
+  <meta name="keywords" content="pet health tracker, vaccination reminder app, pet medical records, dog vaccination tracker, cat health app">
+  <link rel="canonical" href="https://petfiles.app/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PetFiles — Pet Health Tracker & Vaccination Reminders">
+  <meta property="og:description" content="Track your pet's vaccinations, vet appointments, and health records in one beautiful app. Free for iOS and Android.">
+  <meta property="og:url" content="https://petfiles.app/">
+  <meta property="og:image" content="https://petfiles.app/assets/images/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PetFiles — Pet Health Tracker & Vaccination Reminders">
+  <meta name="twitter:description" content="Track your pet's vaccinations, vet appointments, and health records in one beautiful app.">
+  <meta name="twitter:image" content="https://petfiles.app/assets/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <!-- Structured Data: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PetFiles",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "HealthApplication",
+    "description": "Track your pet's vaccinations, vet appointments, and health records in one beautiful app.",
+    "offers": [
+      {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "name": "Free"
+      },
+      {
+        "@type": "Offer",
+        "price": "4.99",
+        "priceCurrency": "USD",
+        "name": "Premium",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "billingDuration": "P1M"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is PetFiles really free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! PetFiles is completely free for one pet. You can track vaccinations, vet appointments, and health records at no cost. Premium unlocks unlimited pets and additional features for $4.99/month."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my pet's data secure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Your data is stored securely on your device and optionally synced via encrypted cloud backup. We never sell your data or share it with third parties."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What types of pets are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PetFiles works for dogs, cats, rabbits, birds, reptiles, and any other pet. If it's your pet, you can track it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. PetFiles stores all data on your device, so you always have access to your pet's records even without an internet connection."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do reminders work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PetFiles sends push notifications before upcoming vaccinations and vet appointments. You can customize when and how often you'd like to be reminded."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I export my pet's records?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! You can share your pet's health summary with your vet or family members directly from the app."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I cancel Premium?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can cancel anytime through your App Store or Google Play subscription settings. You'll keep Premium access until the end of your current billing period."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is PetFiles available in my country?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PetFiles is available worldwide on both iOS and Android. Download it from the App Store or Google Play."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PetFiles",
+    "url": "https://petfiles.app",
+    "logo": "https://petfiles.app/assets/icons/logo.svg",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "url": "https://petfiles.app/support.html"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ======== Navigation ======== -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="/" class="nav__brand" aria-label="PetFiles home">
+        <img src="assets/icons/logo.svg" alt="" width="36" height="36">
+        <span>PetFiles</span>
+      </a>
+
+      <div class="nav__links" role="list">
+        <a href="#features" class="nav__link" role="listitem">Features</a>
+        <a href="#how-it-works" class="nav__link" role="listitem">How It Works</a>
+        <a href="#pricing" class="nav__link" role="listitem">Pricing</a>
+        <a href="#faq" class="nav__link" role="listitem">FAQ</a>
+      </div>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" aria-label="Switch to dark mode">🌙</button>
+        <a href="#download" class="btn btn--primary">Download Free</a>
+        <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="nav__mobile" role="list">
+      <a href="#features" class="nav__link" role="listitem">Features</a>
+      <a href="#how-it-works" class="nav__link" role="listitem">How It Works</a>
+      <a href="#pricing" class="nav__link" role="listitem">Pricing</a>
+      <a href="#faq" class="nav__link" role="listitem">FAQ</a>
+      <a href="#download" class="btn btn--primary" style="text-align:center;">Download Free</a>
+    </div>
+  </nav>
+
+
+  <!-- ======== Hero ======== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero__grid">
+        <div class="hero__content">
+          <h1 class="hero__headline">Every vaccine. Every visit.<br>All in one place.</h1>
+          <p class="hero__subheadline">PetFiles keeps your pet's health records organized, reminders on time, and your mind at ease.</p>
+          <div class="hero__ctas">
+            <a href="https://apps.apple.com/app/petfiles" class="btn btn--primary btn--lg" aria-label="Download on the App Store">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 21.99 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 21.99C7.79 22.03 6.8 20.68 5.96 19.47C4.25 16.99 2.97 12.5 4.7 9.56C5.55 8.1 7.13 7.17 8.82 7.15C10.1 7.13 11.32 8.02 12.11 8.02C12.89 8.02 14.37 6.94 15.92 7.11C16.57 7.14 18.39 7.38 19.56 9.07C19.47 9.13 17.09 10.51 17.12 13.38C17.15 16.84 20.01 17.97 20.05 17.99C20.01 18.07 19.56 19.58 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/></svg>
+              App Store
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.petfiles" class="btn btn--outline btn--lg" aria-label="Get it on Google Play">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12L3.84 21.85C3.34 21.6 3 21.09 3 20.5ZM16.81 15.12L6.05 21.34L14.54 12.85L16.81 15.12ZM20.16 10.81C20.5 11.08 20.75 11.5 20.75 12C20.75 12.5 20.5 12.92 20.16 13.19L17.89 14.5L15.39 12L17.89 9.5L20.16 10.81ZM6.05 2.66L16.81 8.88L14.54 11.15L6.05 2.66Z"/></svg>
+              Google Play
+            </a>
+          </div>
+          <p class="hero__trust">Free to start. No credit card required.</p>
+        </div>
+
+        <div class="hero__device-wrapper">
+          <div class="hero__device-glow"></div>
+          <div class="device-frame float-animation hero__device">
+            <div class="device-frame__notch"></div>
+            <div class="device-frame__screen screenshot-swap" data-light="assets/images/petfiles_light_1.jpeg" data-dark="assets/images/petfiles_dark_1.jpeg">
+              <img src="assets/images/petfiles_light_1.jpeg"
+                   alt="PetFiles app showing pet health dashboard"
+                   width="256" height="555">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======== Features ======== -->
+  <section class="section section--alt" id="features">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2>Everything your pet needs, in your pocket</h2>
+        <p>Designed for pet parents who want the best for their furry, feathered, or scaly companions.</p>
+      </div>
+
+      <div class="features__grid">
+        <div class="card reveal reveal--delay-1">
+          <div class="card__icon" aria-hidden="true">🐾</div>
+          <h3 class="card__title">Pet Profiles</h3>
+          <p class="card__text">Create detailed profiles with photos, breed info, and important dates.</p>
+        </div>
+
+        <div class="card reveal reveal--delay-2">
+          <div class="card__icon" aria-hidden="true">💉</div>
+          <h3 class="card__title">Vaccination Tracking</h3>
+          <p class="card__text">Never miss a shot. Track every vaccination with automatic reminders.</p>
+        </div>
+
+        <div class="card reveal reveal--delay-3">
+          <div class="card__icon" aria-hidden="true">🏥</div>
+          <h3 class="card__title">Vet Appointments</h3>
+          <p class="card__text">Schedule and manage vet visits with reminder notifications.</p>
+        </div>
+
+        <div class="card reveal reveal--delay-4">
+          <div class="card__icon" aria-hidden="true">📋</div>
+          <h3 class="card__title">Health Journal</h3>
+          <p class="card__text">Log observations, symptoms, and wellness notes. Spot trends over time.</p>
+        </div>
+
+        <div class="card reveal reveal--delay-5">
+          <div class="card__icon" aria-hidden="true">🔔</div>
+          <h3 class="card__title">Smart Reminders</h3>
+          <p class="card__text">Get notified before vaccinations expire and appointments approach.</p>
+        </div>
+
+        <div class="card reveal reveal--delay-6">
+          <div class="card__icon" aria-hidden="true">🐶</div>
+          <h3 class="card__title">Multi-Pet Support <span class="badge">Premium</span></h3>
+          <p class="card__text">Manage unlimited pets with Premium. One app for your whole family.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======== How It Works ======== -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2>Up and running in minutes</h2>
+        <p>Getting started with PetFiles is as easy as 1-2-3.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal reveal--delay-1">
+          <div class="step__number" aria-hidden="true">1</div>
+          <div class="step__icon" aria-hidden="true">📸</div>
+          <h3 class="step__title">Add Your Pet</h3>
+          <p class="step__text">Snap a photo, add details, ready in seconds.</p>
+        </div>
+
+        <div class="step reveal reveal--delay-2">
+          <div class="step__number" aria-hidden="true">2</div>
+          <div class="step__icon" aria-hidden="true">📝</div>
+          <h3 class="step__title">Log Their Records</h3>
+          <p class="step__text">Enter vaccinations, vet visits, health notes.</p>
+        </div>
+
+        <div class="step reveal reveal--delay-3">
+          <div class="step__number" aria-hidden="true">3</div>
+          <div class="step__icon" aria-hidden="true">✅</div>
+          <h3 class="step__title">Stay on Track</h3>
+          <p class="step__text">Smart reminders keep you ahead of every appointment and vaccination.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======== Screenshots Carousel ======== -->
+  <section class="section section--alt" id="screenshots">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2>See it in action</h2>
+        <p>Beautiful, intuitive design that makes managing pet health a joy.</p>
+      </div>
+
+      <div class="carousel reveal">
+        <div class="carousel__track">
+          <div class="carousel__slide" data-index="0">
+            <div class="device-frame">
+              <div class="device-frame__notch"></div>
+              <div class="device-frame__screen screenshot-swap" data-light="assets/images/petfiles_light_1.jpeg" data-dark="assets/images/petfiles_dark_1.jpeg">
+                <img src="assets/images/petfiles_light_1.jpeg" alt="PetFiles home screen" width="256" height="555" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel__slide" data-index="1">
+            <div class="device-frame">
+              <div class="device-frame__notch"></div>
+              <div class="device-frame__screen screenshot-swap" data-light="assets/images/petfiles_light_2.jpeg" data-dark="assets/images/petfiles_dark_2.jpeg">
+                <img src="assets/images/petfiles_light_2.jpeg" alt="Pet profile screen" width="256" height="555" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel__slide" data-index="2">
+            <div class="device-frame">
+              <div class="device-frame__notch"></div>
+              <div class="device-frame__screen screenshot-swap" data-light="assets/images/petfiles_light_3.jpeg" data-dark="assets/images/petfiles_dark_3.jpeg">
+                <img src="assets/images/petfiles_light_3.jpeg" alt="Vaccination tracking screen" width="256" height="555" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel__slide" data-index="3">
+            <div class="device-frame">
+              <div class="device-frame__notch"></div>
+              <div class="device-frame__screen screenshot-swap" data-light="assets/images/petfiles_light_4.jpeg" data-dark="assets/images/petfiles_dark_4.jpeg">
+                <img src="assets/images/petfiles_light_4.jpeg" alt="Health journal screen" width="256" height="555" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel__slide" data-index="4">
+            <div class="device-frame">
+              <div class="device-frame__notch"></div>
+              <div class="device-frame__screen screenshot-swap" data-light="assets/images/petfiles_light_5.jpeg" data-dark="assets/images/petfiles_dark_5.jpeg">
+                <img src="assets/images/petfiles_light_5.jpeg" alt="Reminders screen" width="256" height="555" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel__slide" data-index="5">
+            <div class="device-frame">
+              <div class="device-frame__notch"></div>
+              <div class="device-frame__screen screenshot-swap" data-light="assets/images/petfiles_light_6.jpeg" data-dark="assets/images/petfiles_dark_6.jpeg">
+                <img src="assets/images/petfiles_light_6.jpeg" alt="Settings screen" width="256" height="555" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel__controls">
+          <button class="carousel__btn carousel__btn--prev" aria-label="Previous screenshot">←</button>
+          <div class="carousel__dots">
+            <button class="carousel__dot active" aria-label="Go to screenshot 1"></button>
+            <button class="carousel__dot" aria-label="Go to screenshot 2"></button>
+            <button class="carousel__dot" aria-label="Go to screenshot 3"></button>
+            <button class="carousel__dot" aria-label="Go to screenshot 4"></button>
+            <button class="carousel__dot" aria-label="Go to screenshot 5"></button>
+            <button class="carousel__dot" aria-label="Go to screenshot 6"></button>
+          </div>
+          <button class="carousel__btn carousel__btn--next" aria-label="Next screenshot">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======== Pricing ======== -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2>Simple, transparent pricing</h2>
+        <p>Start free. Upgrade when you're ready.</p>
+      </div>
+
+      <div class="pricing-toggle reveal">
+        <span class="pricing-toggle__label pricing-toggle__label--monthly active">Monthly</span>
+        <button class="pricing-toggle__switch" aria-label="Toggle annual pricing" role="switch" aria-checked="false"></button>
+        <span class="pricing-toggle__label pricing-toggle__label--annual">Annual</span>
+        <span class="pricing-toggle__save">Save 17%</span>
+      </div>
+
+      <div class="pricing__grid">
+        <div class="pricing-card reveal reveal--delay-1">
+          <h3 class="pricing-card__name">Free</h3>
+          <div class="pricing-card__price price--monthly">$0</div>
+          <div class="pricing-card__price price--annual" style="display:none">$0</div>
+          <p class="pricing-card__period">Free forever</p>
+          <ul class="pricing-card__features">
+            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span> 1 pet profile</li>
+            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span> Vaccination tracking</li>
+            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span> Vet appointments</li>
+            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span> Health journal</li>
+            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span> Smart reminders</li>
+            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span> Health timeline</li>
+          </ul>
+          <a href="#download" class="btn btn--outline" style="width:100%">Get Started</a>
+        </div>
+
+        <div class="pricing-card pricing-card--featured reveal reveal--delay-2">
+          <div class="pricing-card__badge">Best Value</div>
+          <h3 class="pricing-card__name">Premium</h3>
+          <div class="pricing-card__price price--monthly">$4.99<span>/mo</span></div>
+          <div class="pricing-card__price price--annual" style="display:none">$49.99<span>/yr</span></div>
+          <p class="pricing-card__period price--monthly">Billed monthly</p>
+          <p class="pricing-card__period price--annual" style="display:none">Billed annually</p>
+          <ul class="pricing-card__features">
+            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span> Unlimited pets</li>
+            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span> Everything in Free</li>
+            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span> Cloud backup &amp; sync</li>
+            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span> Export health reports</li>
+            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span> Priority support</li>
+            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span> Family sharing</li>
+          </ul>
+          <a href="#download" class="btn btn--secondary" style="width:100%">Start Free Trial</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======== Testimonials ======== -->
+  <section class="section section--alt" id="testimonials">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2>Loved by pet parents</h2>
+        <p>Join thousands of pet owners who trust PetFiles.</p>
+      </div>
+
+      <div class="testimonials__grid">
+        <div class="testimonial-card reveal reveal--delay-1">
+          <div class="testimonial-card__stars" aria-label="5 stars">★★★★★</div>
+          <p class="testimonial-card__quote">"Finally an app that makes tracking vaccinations easy! The reminders saved me from missing my dog's booster shot."</p>
+          <p class="testimonial-card__author">Sarah M.</p>
+          <p class="testimonial-card__role">Dog owner, 2 pets</p>
+        </div>
+
+        <div class="testimonial-card reveal reveal--delay-2">
+          <div class="testimonial-card__stars" aria-label="5 stars">★★★★★</div>
+          <p class="testimonial-card__quote">"I have three cats and PetFiles keeps all their records perfectly organized. My vet was impressed when I pulled up the health timeline!"</p>
+          <p class="testimonial-card__author">James R.</p>
+          <p class="testimonial-card__role">Cat owner, 3 pets</p>
+        </div>
+
+        <div class="testimonial-card reveal reveal--delay-3">
+          <div class="testimonial-card__stars" aria-label="5 stars">★★★★★</div>
+          <p class="testimonial-card__quote">"Beautiful design and so intuitive. I added my puppy's profile in under a minute. Best pet app I've used."</p>
+          <p class="testimonial-card__author">Maria L.</p>
+          <p class="testimonial-card__role">Dog owner, 1 pet</p>
+        </div>
+      </div>
+
+      <div class="trust-row reveal">
+        <div class="trust-item">
+          <span class="trust-item__icon" aria-hidden="true">📱</span>
+          <span>10,000+ Downloads</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-item__icon" aria-hidden="true">🔒</span>
+          <span>Privacy First</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-item__icon" aria-hidden="true">⭐</span>
+          <span>4.8 Average Rating</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-item__icon" aria-hidden="true">🌍</span>
+          <span>Available Worldwide</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======== FAQ ======== -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2>Frequently asked questions</h2>
+        <p>Got questions? We've got answers.</p>
+      </div>
+
+      <div class="faq__grid">
+        <div class="accordion reveal">
+          <details class="accordion__item">
+            <summary class="accordion__trigger">Is PetFiles really free?</summary>
+            <div class="accordion__content">
+              <p>Yes! PetFiles is completely free for one pet. You can track vaccinations, vet appointments, and health records at no cost. Premium unlocks unlimited pets and additional features for $4.99/month.</p>
+            </div>
+          </details>
+
+          <details class="accordion__item">
+            <summary class="accordion__trigger">Is my pet's data secure?</summary>
+            <div class="accordion__content">
+              <p>Absolutely. Your data is stored securely on your device and optionally synced via encrypted cloud backup. We never sell your data or share it with third parties.</p>
+            </div>
+          </details>
+
+          <details class="accordion__item">
+            <summary class="accordion__trigger">What types of pets are supported?</summary>
+            <div class="accordion__content">
+              <p>PetFiles works for dogs, cats, rabbits, birds, reptiles, and any other pet. If it's your pet, you can track it.</p>
+            </div>
+          </details>
+
+          <details class="accordion__item">
+            <summary class="accordion__trigger">Does it work offline?</summary>
+            <div class="accordion__content">
+              <p>Yes. PetFiles stores all data on your device, so you always have access to your pet's records even without an internet connection.</p>
+            </div>
+          </details>
+
+          <details class="accordion__item">
+            <summary class="accordion__trigger">How do reminders work?</summary>
+            <div class="accordion__content">
+              <p>PetFiles sends push notifications before upcoming vaccinations and vet appointments. You can customize when and how often you'd like to be reminded.</p>
+            </div>
+          </details>
+
+          <details class="accordion__item">
+            <summary class="accordion__trigger">Can I export my pet's records?</summary>
+            <div class="accordion__content">
+              <p>Yes! You can share your pet's health summary with your vet or family members directly from the app.</p>
+            </div>
+          </details>
+
+          <details class="accordion__item">
+            <summary class="accordion__trigger">How do I cancel Premium?</summary>
+            <div class="accordion__content">
+              <p>You can cancel anytime through your App Store or Google Play subscription settings. You'll keep Premium access until the end of your current billing period.</p>
+            </div>
+          </details>
+
+          <details class="accordion__item">
+            <summary class="accordion__trigger">Is PetFiles available in my country?</summary>
+            <div class="accordion__content">
+              <p>PetFiles is available worldwide on both iOS and Android. Download it from the App Store or Google Play.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======== Download CTA ======== -->
+  <section class="download-cta" id="download">
+    <div class="container reveal">
+      <h2>Give your pets the care they deserve</h2>
+      <p>Download PetFiles today and never miss another vaccination or vet visit.</p>
+      <div class="download-cta__buttons">
+        <a href="https://apps.apple.com/app/petfiles" class="btn btn--secondary btn--lg" aria-label="Download on the App Store">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 21.99 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 21.99C7.79 22.03 6.8 20.68 5.96 19.47C4.25 16.99 2.97 12.5 4.7 9.56C5.55 8.1 7.13 7.17 8.82 7.15C10.1 7.13 11.32 8.02 12.11 8.02C12.89 8.02 14.37 6.94 15.92 7.11C16.57 7.14 18.39 7.38 19.56 9.07C19.47 9.13 17.09 10.51 17.12 13.38C17.15 16.84 20.01 17.97 20.05 17.99C20.01 18.07 19.56 19.58 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/></svg>
+          App Store
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.petfiles" class="btn btn--secondary btn--lg" aria-label="Get it on Google Play">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12L3.84 21.85C3.34 21.6 3 21.09 3 20.5ZM16.81 15.12L6.05 21.34L14.54 12.85L16.81 15.12ZM20.16 10.81C20.5 11.08 20.75 11.5 20.75 12C20.75 12.5 20.5 12.92 20.16 13.19L17.89 14.5L15.39 12L17.89 9.5L20.16 10.81ZM6.05 2.66L16.81 8.88L14.54 11.15L6.05 2.66Z"/></svg>
+          Google Play
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======== Footer ======== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand-col">
+          <div class="footer__brand">
+            <img src="assets/icons/logo.svg" alt="" width="32" height="32">
+            <span>PetFiles</span>
+          </div>
+          <p class="footer__tagline">Your pet's health, beautifully organized.</p>
+        </div>
+
+        <div>
+          <h4>Product</h4>
+          <div class="footer__links">
+            <a href="#features" class="footer__link">Features</a>
+            <a href="#pricing" class="footer__link">Pricing</a>
+            <a href="#screenshots" class="footer__link">Screenshots</a>
+            <a href="#faq" class="footer__link">FAQ</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Legal</h4>
+          <div class="footer__links">
+            <a href="privacy.html" class="footer__link">Privacy Policy</a>
+            <a href="support.html" class="footer__link">Support</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Download</h4>
+          <div class="footer__links">
+            <a href="https://apps.apple.com/app/petfiles" class="footer__link">iOS App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.petfiles" class="footer__link">Google Play</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2025 PetFiles. All rights reserved.</p>
+        <p>Made with care for pet parents everywhere.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/components.js"></script>
+</body>
+</html>

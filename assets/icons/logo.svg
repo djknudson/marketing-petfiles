@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <!-- Subtle texture for warmth -->
+    <filter id="warmGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <!-- Shadow for depth -->
+    <filter id="dropShadow">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#2D4B41" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Warm cream background -->
+  <rect width="512" height="512" fill="#F9F8F4" rx="96" ry="96"/>
+
+  <!-- Folder body with shadow -->
+  <g filter="url(#dropShadow)">
+    <!-- Folder tab (top-left) -->
+    <path d="M120 145 Q120 130 135 130 L220 130 Q235 130 245 145 L255 165 L385 165 Q400 165 400 180 L400 180"
+          fill="#2D4B41"/>
+    <!-- Folder main body -->
+    <rect x="112" y="165" width="288" height="220" rx="16" fill="#2D4B41"/>
+    <!-- Folder front face (slightly lighter for depth) -->
+    <rect x="112" y="175" width="288" height="210" rx="14" fill="#3A5D52"/>
+  </g>
+
+  <!-- Paw print - CORRECT orientation with toes curving TOWARD palm -->
+  <g transform="translate(256, 280)">
+    <!-- Main palm pad - larger, bean-shaped -->
+    <ellipse cx="0" cy="25" rx="42" ry="36" fill="#C8AD7F"/>
+    <!-- Subtle highlight on palm -->
+    <ellipse cx="-8" cy="18" rx="18" ry="14" fill="#D4BC8F" opacity="0.5"/>
+
+    <!-- Toe beans - arranged in arc CURVING TOWARD the palm -->
+    <!-- Left outer toe - angled inward -->
+    <ellipse cx="-48" cy="-18" rx="18" ry="22" fill="#C8AD7F" transform="rotate(25 -48 -18)"/>
+    <!-- Left inner toe - angled inward -->
+    <ellipse cx="-18" cy="-38" rx="16" ry="20" fill="#C8AD7F" transform="rotate(10 -18 -38)"/>
+    <!-- Right inner toe - angled inward -->
+    <ellipse cx="18" cy="-38" rx="16" ry="20" fill="#C8AD7F" transform="rotate(-10 18 -38)"/>
+    <!-- Right outer toe - angled inward -->
+    <ellipse cx="48" cy="-18" rx="18" ry="22" fill="#C8AD7F" transform="rotate(-25 48 -18)"/>
+
+    <!-- Subtle highlights on toe beans -->
+    <ellipse cx="-48" cy="-22" rx="8" ry="10" fill="#D4BC8F" opacity="0.4" transform="rotate(25 -48 -22)"/>
+    <ellipse cx="-18" cy="-42" rx="7" ry="9" fill="#D4BC8F" opacity="0.4" transform="rotate(10 -18 -42)"/>
+    <ellipse cx="18" cy="-42" rx="7" ry="9" fill="#D4BC8F" opacity="0.4" transform="rotate(-10 18 -42)"/>
+    <ellipse cx="48" cy="-22" rx="8" ry="10" fill="#D4BC8F" opacity="0.4" transform="rotate(-25 48 -22)"/>
+  </g>
+</svg>

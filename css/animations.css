@@ -1,0 +1,184 @@
+/* ==========================================================================
+   PetFiles — Animations (Keyframes + Scroll Reveals)
+   ========================================================================== */
+
+/* Scroll-triggered reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Directional reveals */
+.reveal--left {
+  transform: translateX(-40px);
+}
+
+.reveal--left.reveal--visible {
+  transform: translateX(0);
+}
+
+.reveal--right {
+  transform: translateX(40px);
+}
+
+.reveal--right.reveal--visible {
+  transform: translateX(0);
+}
+
+.reveal--scale {
+  transform: scale(0.95);
+}
+
+.reveal--scale.reveal--visible {
+  transform: scale(1);
+}
+
+/* Stagger delays for child elements */
+.reveal--delay-1 { transition-delay: 0.1s; }
+.reveal--delay-2 { transition-delay: 0.2s; }
+.reveal--delay-3 { transition-delay: 0.3s; }
+.reveal--delay-4 { transition-delay: 0.4s; }
+.reveal--delay-5 { transition-delay: 0.5s; }
+.reveal--delay-6 { transition-delay: 0.6s; }
+
+/* Hero device float */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Hero text fade-in */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.8s ease forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.8s ease forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Stagger hero elements */
+.hero__headline {
+  animation: fadeInLeft 0.8s ease forwards;
+}
+
+.hero__subheadline {
+  opacity: 0;
+  animation: fadeInLeft 0.8s ease 0.15s forwards;
+}
+
+.hero__ctas {
+  opacity: 0;
+  animation: fadeInLeft 0.8s ease 0.3s forwards;
+}
+
+.hero__trust {
+  opacity: 0;
+  animation: fadeInLeft 0.8s ease 0.45s forwards;
+}
+
+.hero__device {
+  opacity: 0;
+  animation: fadeInRight 0.9s ease 0.2s forwards;
+}
+
+/* Pulse for CTA attention */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 173, 127, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(200, 173, 127, 0); }
+}
+
+/* Pricing toggle */
+@keyframes price-swap {
+  0% { opacity: 1; transform: translateY(0); }
+  50% { opacity: 0; transform: translateY(-8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.price-animate {
+  animation: price-swap 0.4s ease;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .float-animation {
+    animation: none;
+  }
+
+  .hero__headline,
+  .hero__subheadline,
+  .hero__ctas,
+  .hero__trust,
+  .hero__device {
+    opacity: 1;
+    animation: none;
+  }
+
+  .animate-fade-in-left,
+  .animate-fade-in-right,
+  .animate-fade-in-up {
+    animation: none;
+    opacity: 1;
+  }
+
+  .price-animate {
+    animation: none;
+  }
+}

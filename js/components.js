@@ -1,0 +1,126 @@
+/* ==========================================================================
+   PetFiles — Component JS (Accordion, Carousel, Pricing Toggle)
+   ========================================================================== */
+
+(function () {
+  'use strict';
+
+  /* ---- FAQ Accordion (single-open) ---- */
+  const accordion = document.querySelector('.accordion');
+  if (accordion) {
+    const items = accordion.querySelectorAll('.accordion__item');
+
+    items.forEach(item => {
+      item.addEventListener('toggle', () => {
+        if (item.open) {
+          items.forEach(other => {
+            if (other !== item && other.open) {
+              other.open = false;
+            }
+          });
+        }
+      });
+    });
+  }
+
+  /* ---- Screenshot Carousel ---- */
+  const carouselTrack = document.querySelector('.carousel__track');
+  const carouselDots = document.querySelectorAll('.carousel__dot');
+  const prevBtn = document.querySelector('.carousel__btn--prev');
+  const nextBtn = document.querySelector('.carousel__btn--next');
+
+  if (carouselTrack) {
+    const slides = carouselTrack.querySelectorAll('.carousel__slide');
+    let currentSlide = 0;
+
+    function updateCarousel(index) {
+      if (index < 0) index = 0;
+      if (index >= slides.length) index = slides.length - 1;
+      currentSlide = index;
+
+      slides[index].scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      });
+
+      // Update active states
+      slides.forEach((s, i) => s.classList.toggle('active', i === index));
+      carouselDots.forEach((d, i) => d.classList.toggle('active', i === index));
+    }
+
+    // Dot click
+    carouselDots.forEach((dot, i) => {
+      dot.addEventListener('click', () => updateCarousel(i));
+    });
+
+    // Prev / Next
+    if (prevBtn) prevBtn.addEventListener('click', () => updateCarousel(currentSlide - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => updateCarousel(currentSlide + 1));
+
+    // Sync dots on manual scroll
+    if ('IntersectionObserver' in window) {
+      const slideObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const index = Array.from(slides).indexOf(entry.target);
+              if (index >= 0) {
+                currentSlide = index;
+                slides.forEach((s, i) => s.classList.toggle('active', i === index));
+                carouselDots.forEach((d, i) => d.classList.toggle('active', i === index));
+              }
+            }
+          });
+        },
+        { root: carouselTrack, threshold: 0.6 }
+      );
+
+      slides.forEach(slide => slideObserver.observe(slide));
+    }
+
+    // Initialize first slide
+    updateCarousel(0);
+  }
+
+  /* ---- Pricing Toggle ---- */
+  const pricingSwitch = document.querySelector('.pricing-toggle__switch');
+  const monthlyLabel = document.querySelector('.pricing-toggle__label--monthly');
+  const annualLabel = document.querySelector('.pricing-toggle__label--annual');
+  const monthlyPrices = document.querySelectorAll('.price--monthly');
+  const annualPrices = document.querySelectorAll('.price--annual');
+
+  if (pricingSwitch) {
+    let isAnnual = false;
+
+    function updatePricing() {
+      pricingSwitch.classList.toggle('active', isAnnual);
+      if (monthlyLabel) monthlyLabel.classList.toggle('active', !isAnnual);
+      if (annualLabel) annualLabel.classList.toggle('active', isAnnual);
+
+      monthlyPrices.forEach(el => {
+        el.style.display = isAnnual ? 'none' : '';
+        if (!isAnnual) el.classList.add('price-animate');
+      });
+
+      annualPrices.forEach(el => {
+        el.style.display = isAnnual ? '' : 'none';
+        if (isAnnual) el.classList.add('price-animate');
+      });
+
+      // Remove animation class after it completes
+      setTimeout(() => {
+        monthlyPrices.forEach(el => el.classList.remove('price-animate'));
+        annualPrices.forEach(el => el.classList.remove('price-animate'));
+      }, 400);
+    }
+
+    pricingSwitch.addEventListener('click', () => {
+      isAnnual = !isAnnual;
+      updatePricing();
+    });
+
+    // Initialize
+    updatePricing();
+  }
+})();
