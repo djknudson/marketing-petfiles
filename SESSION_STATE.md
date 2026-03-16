@@ -1,6 +1,6 @@
 # Session State
 
-- **Date**: 2026-03-15
+- **Date**: 2026-03-16
 - **Phase**: Implementation — V1 complete, pending review adjustments
 - **Version**: 0.1.0
 
@@ -19,11 +19,6 @@
 
 ## Last Session
 
-Built complete marketing website from plan:
-- **3 HTML pages**: index.html (10-section landing), privacy.html, support.html
-- **5 CSS files**: variables (Midnight Forest tokens), base, components, sections, animations
-- **2 JS files**: main (nav/scroll/dark mode), components (accordion/carousel/pricing toggle)
-- **Assets**: Copied logo SVG, favicon, app icon, 12 screenshots from PetFiles app
-- **SEO**: robots.txt, sitemap.xml, JSON-LD structured data (SoftwareApplication, FAQPage, Organization)
-- **Features**: Dark mode (system + toggle + localStorage), scroll reveal animations, screenshot carousel with dark mode swap, pricing toggle, FAQ accordion, responsive layout, reduced motion support
-- Committed as `5b852ba feat: implement full marketing website`
+Enabled Claude Code experimental Agent Teams feature:
+- Added `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` env var to `~/.claude/settings.json`
+- No changes to marketing-petfiles repo itself
