@@ -459,61 +459,54 @@
   line-height: var(--line-height-relaxed);
 }
 
-/* ---- Testimonial Cards ---- */
-.testimonial-card {
-  background-color: var(--color-bg);
-  border: 1px solid var(--color-surface-border);
-  border-radius: var(--radius-default);
-  padding: var(--space-3xl);
+/* ---- Store badge theme switching ---- */
+.store-badge__dark {
+  display: none;
 }
 
-.testimonial-card__stars {
-  color: var(--color-secondary);
-  font-size: var(--font-size-md);
-  margin-bottom: var(--space-lg);
-  letter-spacing: 2px;
+[data-theme="dark"] .store-badge__light,
+.dark .store-badge__light {
+  display: none;
 }
 
-.testimonial-card__quote {
-  font-size: var(--font-size-base);
-  color: var(--color-text-primary);
-  font-style: italic;
-  line-height: var(--line-height-relaxed);
-  margin-bottom: var(--space-xl);
+[data-theme="dark"] .store-badge__dark,
+.dark .store-badge__dark {
+  display: inline;
 }
 
-.testimonial-card__author {
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-primary);
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .store-badge__light {
+    display: none;
+  }
+
+  :root:not([data-theme="light"]) .store-badge__dark {
+    display: inline;
+  }
 }
 
-.testimonial-card__role {
+/* ---- "New" badge ---- */
+.badge--new {
+  background-color: var(--color-primary);
+  color: #fff;
   font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
+  padding: var(--space-xs) var(--space-lg);
 }
 
-/* ---- Trust indicators ---- */
-.trust-row {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-4xl);
-  flex-wrap: wrap;
-  margin-top: var(--space-4xl);
+.hero__badge {
+  margin-bottom: var(--space-lg);
 }
 
-.trust-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
+/* ---- Android coming soon (hero) ---- */
+.hero__android-soon {
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-secondary);
+  color: var(--color-text-muted);
+  margin-top: var(--space-sm);
 }
 
-.trust-item__icon {
-  font-size: var(--font-size-lg);
-  color: var(--color-primary);
+/* ---- Muted footer link ---- */
+.footer__link--muted {
+  opacity: 0.4;
+  cursor: default;
 }
 
 /* ---- Pricing Toggle ---- */
