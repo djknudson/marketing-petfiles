@@ -12,6 +12,14 @@
   overflow: hidden;
 }
 
+/* Spacer that collapses as nav brand shrinks into place */
+.hero__brand-spacer {
+  overflow: hidden;
+  will-change: max-height;
+}
+
+/* Nav brand: JS animates width/height/fontSize directly for crisp SVG */
+
 .hero__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -259,11 +267,13 @@
 
 .carousel__slide .device-frame {
   width: 220px;
-  transition: transform var(--transition-base);
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+              opacity 0.4s ease;
 }
 
-.carousel__slide.active .device-frame {
-  transform: scale(1.1);
+/* Faster transition during hover for responsive dock feel */
+.carousel__track:hover .carousel__slide .device-frame {
+  transition-duration: 0.12s;
 }
 
 .carousel__controls {
@@ -296,7 +306,7 @@
 
 .carousel__dots {
   display: flex;
-  gap: var(--space-sm);
+  gap: 0;
 }
 
 .carousel__dot {
@@ -307,7 +317,8 @@
   border: none;
   cursor: pointer;
   transition: all var(--transition-fast);
-  padding: 0;
+  padding: 10px;
+  background-clip: content-box;
 }
 
 .carousel__dot.active {
@@ -448,7 +459,7 @@
   max-width: 30ch;
 }
 
-.footer h4 {
+.footer h3 {
   color: #fff;
   font-size: var(--font-size-sm);
   text-transform: uppercase;

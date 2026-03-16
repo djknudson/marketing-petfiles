@@ -20,7 +20,7 @@
   /* Text */
   --color-text-primary: #1A1C1B;
   --color-text-secondary: #505451;
-  --color-text-muted: #8B8A80;
+  --color-text-muted: #6B6A60;
 
   /* Status */
   --color-success: #4E7044;
@@ -107,7 +107,7 @@
 
   --color-text-primary: #E1E3E0;
   --color-text-secondary: #9FA3A0;
-  --color-text-muted: #6B6F6C;
+  --color-text-muted: #868A87;
 
   --color-success: #6BAF5E;
   --color-warning: #E8A45E;
@@ -135,7 +135,7 @@
 
     --color-text-primary: #E1E3E0;
     --color-text-secondary: #9FA3A0;
-    --color-text-muted: #6B6F6C;
+    --color-text-muted: #868A87;
 
     --color-success: #6BAF5E;
     --color-warning: #E8A45E;

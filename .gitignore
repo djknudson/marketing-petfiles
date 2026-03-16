@@ -8,5 +8,8 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Lighthouse reports
+lighthouse-*
+
 # Claude
 .claude/settings.local.json

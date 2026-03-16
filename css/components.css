@@ -492,6 +492,17 @@
   padding: var(--space-xs) var(--space-lg);
 }
 
+[data-theme="dark"] .badge--new,
+.dark .badge--new {
+  background-color: #3A5D4E;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .badge--new {
+    background-color: #3A5D4E;
+  }
+}
+
 .hero__badge {
   margin-bottom: var(--space-lg);
 }
@@ -505,7 +516,7 @@
 
 /* ---- Muted footer link ---- */
 .footer__link--muted {
-  opacity: 0.4;
+  color: rgba(255, 255, 255, 0.5);
   cursor: default;
 }
 

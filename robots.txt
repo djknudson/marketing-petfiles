@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://petfiles.app/sitemap.xml
+Sitemap: https://petfiles.waywardsonsoftware.com/sitemap.xml

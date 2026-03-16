@@ -181,4 +181,20 @@
   .price-animate {
     animation: none;
   }
+
+  /* No scroll-driven scaling */
+  .nav__brand {
+    transform: none !important;
+  }
+
+  .hero__brand-spacer {
+    display: none;
+  }
+
+  /* Carousel: no scale animation, uniform appearance */
+  .carousel__slide .device-frame {
+    transition: none;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

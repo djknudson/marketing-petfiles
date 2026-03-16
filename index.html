@@ -6,20 +6,20 @@
   <title>PetFiles — Pet Health Tracker &amp; Vaccination Reminders</title>
   <meta name="description" content="Track your pet's vaccinations, vet appointments, and health records in one beautiful app. Free for iOS.">
   <meta name="keywords" content="pet health tracker, vaccination reminder app, pet medical records, dog vaccination tracker, cat health app">
-  <link rel="canonical" href="https://petfiles.app/">
+  <link rel="canonical" href="https://petfiles.waywardsonsoftware.com/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="PetFiles — Pet Health Tracker & Vaccination Reminders">
   <meta property="og:description" content="Track your pet's vaccinations, vet appointments, and health records in one beautiful app. Free for iOS.">
-  <meta property="og:url" content="https://petfiles.app/">
-  <meta property="og:image" content="https://petfiles.app/assets/images/og-image.png">
+  <meta property="og:url" content="https://petfiles.waywardsonsoftware.com/">
+  <meta property="og:image" content="https://petfiles.waywardsonsoftware.com/assets/images/og-image.png">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PetFiles — Pet Health Tracker & Vaccination Reminders">
   <meta name="twitter:description" content="Track your pet's vaccinations, vet appointments, and health records in one beautiful app.">
-  <meta name="twitter:image" content="https://petfiles.app/assets/images/og-image.png">
+  <meta name="twitter:image" content="https://petfiles.waywardsonsoftware.com/assets/images/og-image.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/icons/favicon.png">
@@ -28,6 +28,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Preload hero image -->
+  <link rel="preload" as="image" href="assets/images/petfiles_light_1.webp" type="image/webp">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/variables.css">
@@ -130,12 +133,12 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "PetFiles",
-    "url": "https://petfiles.app",
-    "logo": "https://petfiles.app/assets/icons/logo.svg",
+    "url": "https://petfiles.waywardsonsoftware.com",
+    "logo": "https://petfiles.waywardsonsoftware.com/assets/icons/logo.svg",
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer support",
-      "url": "https://petfiles.app/support.html"
+      "url": "https://petfiles.waywardsonsoftware.com/support.html"
     }
   }
   </script>
@@ -179,18 +182,22 @@
   </nav>
 
 
+  <main>
   <!-- ======== Hero ======== -->
   <section class="hero" id="hero">
     <div class="container">
       <div class="hero__grid">
         <div class="hero__content">
+          <!-- Spacer: collapses on scroll as nav brand shrinks into place -->
+          <div class="hero__brand-spacer" aria-hidden="true"></div>
+
           <div class="hero__badge"><span class="badge badge--new">New on the App Store</span></div>
           <h1 class="hero__headline">Every vaccine. Every visit.<br>All in one place.</h1>
           <p class="hero__subheadline">PetFiles keeps your pet's health records organized, reminders on time, and your mind at ease.</p>
           <div class="hero__ctas">
             <a href="https://apps.apple.com/us/app/petfiles/id6757916297?itscg=30200&itsct=apps_box_link&mttnsubad=6757916297" class="store-badge" aria-label="Download on the App Store">
-              <img src="assets/icons/app-store-badge-black.svg" alt="Download on the App Store" height="40" class="store-badge__light">
-              <img src="assets/icons/app-store-badge-white.svg" alt="Download on the App Store" height="40" class="store-badge__dark">
+              <img src="assets/icons/app-store-badge-black.svg" alt="Download on the App Store" width="120" height="40" class="store-badge__light">
+              <img src="assets/icons/app-store-badge-white.svg" alt="Download on the App Store" width="120" height="40" class="store-badge__dark">
             </a>
           </div>
           <p class="hero__android-soon">Android coming soon</p>
@@ -201,8 +208,8 @@
           <div class="hero__device-glow"></div>
           <div class="device-frame float-animation hero__device">
             <div class="device-frame__dynamic-island"></div>
-            <div class="device-frame__screen screenshot-swap" data-light="assets/images/petfiles_light_1.jpeg" data-dark="assets/images/petfiles_dark_1.jpeg">
-              <img src="assets/images/petfiles_light_1.jpeg"
+            <div class="device-frame__screen screenshot-swap" data-light="assets/images/petfiles_light_1.webp" data-dark="assets/images/petfiles_dark_1.webp">
+              <img src="assets/images/petfiles_light_1.webp"
                    alt="PetFiles app showing pet health dashboard"
                    width="256" height="555">
             </div>
@@ -309,8 +316,8 @@
           <div class="carousel__slide" data-index="0">
             <div class="device-frame">
               <div class="device-frame__dynamic-island"></div>
-              <div class="device-frame__screen screenshot-swap" data-light="assets/images/petfiles_light_1.jpeg" data-dark="assets/images/petfiles_dark_1.jpeg">
-                <img src="assets/images/petfiles_light_1.jpeg" alt="PetFiles home screen" width="256" height="555" loading="lazy">
+              <div class="device-frame__screen screenshot-swap" data-light="assets/images/petfiles_light_1.webp" data-dark="assets/images/petfiles_dark_1.webp">
+                <img src="assets/images/petfiles_light_1.webp" alt="PetFiles home screen" width="256" height="555" loading="lazy">
               </div>
             </div>
           </div>
@@ -318,8 +325,8 @@
           <div class="carousel__slide" data-index="1">
             <div class="device-frame">
               <div class="device-frame__dynamic-island"></div>
-              <div class="device-frame__screen screenshot-swap" data-light="assets/images/petfiles_light_2.jpeg" data-dark="assets/images/petfiles_dark_2.jpeg">
-                <img src="assets/images/petfiles_light_2.jpeg" alt="Pet profile screen" width="256" height="555" loading="lazy">
+              <div class="device-frame__screen screenshot-swap" data-light="assets/images/petfiles_light_2.webp" data-dark="assets/images/petfiles_dark_2.webp">
+                <img src="assets/images/petfiles_light_2.webp" alt="Pet profile screen" width="256" height="555" loading="lazy">
               </div>
             </div>
           </div>
@@ -327,8 +334,8 @@
           <div class="carousel__slide" data-index="2">
             <div class="device-frame">
               <div class="device-frame__dynamic-island"></div>
-              <div class="device-frame__screen screenshot-swap" data-light="assets/images/petfiles_light_3.jpeg" data-dark="assets/images/petfiles_dark_3.jpeg">
-                <img src="assets/images/petfiles_light_3.jpeg" alt="Vaccination tracking screen" width="256" height="555" loading="lazy">
+              <div class="device-frame__screen screenshot-swap" data-light="assets/images/petfiles_light_3.webp" data-dark="assets/images/petfiles_dark_3.webp">
+                <img src="assets/images/petfiles_light_3.webp" alt="Vaccination tracking screen" width="256" height="555" loading="lazy">
               </div>
             </div>
           </div>
@@ -336,8 +343,8 @@
           <div class="carousel__slide" data-index="3">
             <div class="device-frame">
               <div class="device-frame__dynamic-island"></div>
-              <div class="device-frame__screen screenshot-swap" data-light="assets/images/petfiles_light_4.jpeg" data-dark="assets/images/petfiles_dark_4.jpeg">
-                <img src="assets/images/petfiles_light_4.jpeg" alt="Health journal screen" width="256" height="555" loading="lazy">
+              <div class="device-frame__screen screenshot-swap" data-light="assets/images/petfiles_light_4.webp" data-dark="assets/images/petfiles_dark_4.webp">
+                <img src="assets/images/petfiles_light_4.webp" alt="Health journal screen" width="256" height="555" loading="lazy">
               </div>
             </div>
           </div>
@@ -345,8 +352,8 @@
           <div class="carousel__slide" data-index="4">
             <div class="device-frame">
               <div class="device-frame__dynamic-island"></div>
-              <div class="device-frame__screen screenshot-swap" data-light="assets/images/petfiles_light_5.jpeg" data-dark="assets/images/petfiles_dark_5.jpeg">
-                <img src="assets/images/petfiles_light_5.jpeg" alt="Reminders screen" width="256" height="555" loading="lazy">
+              <div class="device-frame__screen screenshot-swap" data-light="assets/images/petfiles_light_5.webp" data-dark="assets/images/petfiles_dark_5.webp">
+                <img src="assets/images/petfiles_light_5.webp" alt="Reminders screen" width="256" height="555" loading="lazy">
               </div>
             </div>
           </div>
@@ -354,8 +361,8 @@
           <div class="carousel__slide" data-index="5">
             <div class="device-frame">
               <div class="device-frame__dynamic-island"></div>
-              <div class="device-frame__screen screenshot-swap" data-light="assets/images/petfiles_light_6.jpeg" data-dark="assets/images/petfiles_dark_6.jpeg">
-                <img src="assets/images/petfiles_light_6.jpeg" alt="Settings screen" width="256" height="555" loading="lazy">
+              <div class="device-frame__screen screenshot-swap" data-light="assets/images/petfiles_light_6.webp" data-dark="assets/images/petfiles_dark_6.webp">
+                <img src="assets/images/petfiles_light_6.webp" alt="Settings screen" width="256" height="555" loading="lazy">
               </div>
             </div>
           </div>
@@ -495,7 +502,7 @@
       <p>Download PetFiles today and never miss another vaccination or vet visit.</p>
       <div class="download-cta__buttons">
         <a href="https://apps.apple.com/us/app/petfiles/id6757916297?itscg=30200&itsct=apps_box_link&mttnsubad=6757916297" class="store-badge" aria-label="Download on the App Store">
-          <img src="assets/icons/app-store-badge-white.svg" alt="Download on the App Store" height="40">
+          <img src="assets/icons/app-store-badge-white.svg" alt="Download on the App Store" width="120" height="40">
         </a>
       </div>
       <div class="download-cta__qr">
@@ -505,6 +512,8 @@
     </div>
   </section>
 
+
+  </main>
 
   <!-- ======== Footer ======== -->
   <footer class="footer" role="contentinfo">
@@ -519,7 +528,7 @@
         </div>
 
         <div>
-          <h4>Product</h4>
+          <h3>Product</h3>
           <div class="footer__links">
             <a href="#features" class="footer__link">Features</a>
             <a href="#pricing" class="footer__link">Pricing</a>
@@ -529,7 +538,7 @@
         </div>
 
         <div>
-          <h4>Legal</h4>
+          <h3>Legal</h3>
           <div class="footer__links">
             <a href="privacy.html" class="footer__link">Privacy Policy</a>
             <a href="support.html" class="footer__link">Support</a>
@@ -537,7 +546,7 @@
         </div>
 
         <div>
-          <h4>Download</h4>
+          <h3>Download</h3>
           <div class="footer__links">
             <a href="https://apps.apple.com/us/app/petfiles/id6757916297?itscg=30200&itsct=apps_box_link&mttnsubad=6757916297" class="footer__link">iOS App Store</a>
             <span class="footer__link footer__link--muted">Android coming soon</span>
@@ -555,5 +564,6 @@
   <!-- Scripts -->
   <script src="js/main.js"></script>
   <script src="js/components.js"></script>
+  <script src="js/microinteractions.js"></script>
 </body>
 </html>

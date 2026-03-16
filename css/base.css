@@ -46,6 +46,14 @@ a:hover {
   color: var(--color-primary-light);
 }
 
+/* Links in body text need underline for accessibility (not just color) */
+main p a,
+main li a,
+.accordion__content a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 ul, ol {
   list-style: none;
 }
