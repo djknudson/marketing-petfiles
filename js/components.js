@@ -33,15 +33,19 @@
     const slides = carouselTrack.querySelectorAll('.carousel__slide');
     let currentSlide = 0;
 
-    function updateCarousel(index) {
+    function updateCarousel(index, behavior) {
       if (index < 0) index = 0;
       if (index >= slides.length) index = slides.length - 1;
       currentSlide = index;
 
-      slides[index].scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest',
-        inline: 'center'
+      // Scroll within the track only — never moves the page vertically
+      var slide = slides[index];
+      var trackRect = carouselTrack.getBoundingClientRect();
+      var slideRect = slide.getBoundingClientRect();
+      var scrollTarget = carouselTrack.scrollLeft + (slideRect.left + slideRect.width / 2) - (trackRect.left + trackRect.width / 2);
+      carouselTrack.scrollTo({
+        left: scrollTarget,
+        behavior: behavior || 'smooth'
       });
 
       // Update active states
@@ -79,8 +83,8 @@
       slides.forEach(slide => slideObserver.observe(slide));
     }
 
-    // Initialize first slide
-    updateCarousel(0);
+    // Initialize first slide (instant — no page scroll)
+    updateCarousel(0, 'instant');
   }
 
   /* ---- Pricing Toggle ---- */

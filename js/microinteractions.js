@@ -64,10 +64,10 @@
       lastY = y;
 
       // Brand and spacer on same scroll range
-      var raw = Math.min(Math.max(y / 280, 0), 1);
+      var raw = Math.min(Math.max(y / 200, 0), 1);
 
-      // Brand shrinks slightly ahead — steeper easing (easeInCubic-ish)
-      var bp = ease(Math.min(raw * 1.08, 1));
+      // Brand shrinks ahead of spacer — prevents badge/icon overlap
+      var bp = ease(Math.min(raw * 1.15, 1));
 
       // Spacer follows just behind — standard easing
       var sp = ease(raw);
