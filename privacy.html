@@ -119,14 +119,14 @@
         <span>Privacy Policy</span>
       </nav>
       <h1>Privacy Policy</h1>
-      <p class="text-muted" style="margin-bottom: var(--space-4xl);">Last updated: March 15, 2026</p>
+      <p class="text-muted" style="margin-bottom: var(--space-4xl);">Last updated: March 16, 2026</p>
 
       <div style="display: flex; flex-direction: column; gap: var(--space-4xl);">
 
         <section>
           <h2 style="font-size: var(--font-size-xl); margin-bottom: var(--space-lg);">Overview</h2>
-          <p>PetFiles ("we," "our," or "the app") is committed to protecting your privacy. This policy explains what data we collect, how we use it, and your rights regarding your information.</p>
-          <p style="margin-top: var(--space-md);"><strong>The short version:</strong> Your pet's data stays on your device. We don't sell your information. We collect only what's needed to make the app work.</p>
+          <p>PetFiles, operated by Wayward Son Software ("we," "our," or "the app"), is committed to protecting your privacy. This policy explains what data we collect, how we use it, and your rights regarding your information.</p>
+          <p style="margin-top: var(--space-md);"><strong>The short version:</strong> Your data is stored securely in the cloud so you can access it anywhere. We don't sell your information, we don't track you, and we collect only what's needed to make the app work.</p>
         </section>
 
         <section>
@@ -138,41 +138,59 @@
             <li style="list-style: disc; color: var(--color-text-secondary);">Vaccination records and dates</li>
             <li style="list-style: disc; color: var(--color-text-secondary);">Vet appointment details</li>
             <li style="list-style: disc; color: var(--color-text-secondary);">Health journal entries</li>
-            <li style="list-style: disc; color: var(--color-text-secondary);">Account information (email) if you create an account for cloud sync</li>
+            <li style="list-style: disc; color: var(--color-text-secondary);">Account information (email address and password) when you create an account</li>
           </ul>
 
           <h3 style="font-size: var(--font-size-md); margin-bottom: var(--space-sm); margin-top: var(--space-xl);">Data collected automatically</h3>
           <ul style="padding-left: var(--space-2xl); display: flex; flex-direction: column; gap: var(--space-sm);">
             <li style="list-style: disc; color: var(--color-text-secondary);">Device type and operating system version (for compatibility)</li>
             <li style="list-style: disc; color: var(--color-text-secondary);">App version (for troubleshooting)</li>
-            <li style="list-style: disc; color: var(--color-text-secondary);">Crash reports (anonymized, via platform crash reporting)</li>
+            <li style="list-style: disc; color: var(--color-text-secondary);">Crash reports and error logs (collected anonymously via <strong>Sentry</strong>, our error monitoring service)</li>
           </ul>
+
+          <h3 style="font-size: var(--font-size-md); margin-bottom: var(--space-sm); margin-top: var(--space-xl);">Data not collected</h3>
+          <p style="color: var(--color-text-secondary);">PetFiles does not collect or use your location data. We do not use advertising identifiers (IDFA) or any cross-app tracking mechanisms.</p>
+
+          <h3 style="font-size: var(--font-size-md); margin-bottom: var(--space-sm); margin-top: var(--space-xl);">Data linked to your identity</h3>
+          <p style="color: var(--color-text-secondary);">Your email address and pet data are linked to your account. Crash reports and diagnostic data are collected anonymously and cannot be connected to you.</p>
         </section>
 
         <section>
           <h2 style="font-size: var(--font-size-xl); margin-bottom: var(--space-lg);">How We Use Your Data</h2>
           <ul style="padding-left: var(--space-2xl); display: flex; flex-direction: column; gap: var(--space-sm);">
             <li style="list-style: disc; color: var(--color-text-secondary);">To provide and improve the PetFiles app experience</li>
-            <li style="list-style: disc; color: var(--color-text-secondary);">To send vaccination and appointment reminders (local notifications)</li>
-            <li style="list-style: disc; color: var(--color-text-secondary);">To sync your data across devices (if you opt into cloud backup)</li>
+            <li style="list-style: disc; color: var(--color-text-secondary);">To send vaccination and appointment reminders (local notifications scheduled on your device)</li>
+            <li style="list-style: disc; color: var(--color-text-secondary);">To store and sync your data so you can access it from any device</li>
             <li style="list-style: disc; color: var(--color-text-secondary);">To diagnose and fix bugs using anonymized crash data</li>
           </ul>
+          <p style="margin-top: var(--space-md); color: var(--color-text-secondary);">We use your data only for the purposes listed above. We will not repurpose your data for materially different uses without first obtaining your consent.</p>
         </section>
 
         <section>
           <h2 style="font-size: var(--font-size-xl); margin-bottom: var(--space-lg);">Data Storage &amp; Security</h2>
-          <p>All pet data is stored locally on your device by default. If you enable cloud backup, your data is encrypted in transit and at rest using industry-standard encryption.</p>
-          <p style="margin-top: var(--space-md);">We do not store your data on our servers unless you explicitly opt into cloud sync.</p>
+          <p>Your pet data, account information, and uploaded photos are stored on <strong>Supabase</strong>, a cloud database platform built on PostgreSQL. Supabase encrypts your data in transit (TLS) and at rest using industry-standard encryption. Access to your data is enforced through Row-Level Security, meaning only your authenticated account can read or modify your records.</p>
+          <p style="margin-top: var(--space-md);">Authentication credentials are managed by Supabase Auth. Your password is hashed and never stored in plain text.</p>
+        </section>
+
+        <section>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: var(--space-lg);">Data Retention</h2>
+          <p>Your pet data, account information, and uploaded photos are retained for as long as your account is active. When you delete your account (via the in-app deletion feature or by contacting us), all associated data — including pet profiles, health records, and uploaded photos — is permanently deleted from our servers within 30 days.</p>
+          <p style="margin-top: var(--space-md);">Anonymized crash reports and diagnostic data collected by Sentry are retained for up to 90 days to allow for bug resolution, then automatically purged.</p>
         </section>
 
         <section>
           <h2 style="font-size: var(--font-size-xl); margin-bottom: var(--space-lg);">Data Sharing</h2>
-          <p>We do <strong>not</strong> sell, rent, or trade your personal data. We may share anonymized, aggregated analytics (e.g., total number of users) but never individual data.</p>
+          <p>We do <strong>not</strong> sell, rent, or trade your personal data. We do not share your data with advertising networks or data brokers. We may share anonymized, aggregated analytics (e.g., total number of users) but never individual data.</p>
           <p style="margin-top: var(--space-md);">Third-party services we use:</p>
           <ul style="padding-left: var(--space-2xl); display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-sm);">
             <li style="list-style: disc; color: var(--color-text-secondary);"><strong>Apple App Store</strong> — for app distribution and subscription management</li>
-            <li style="list-style: disc; color: var(--color-text-secondary);"><strong>Cloud infrastructure</strong> — for optional encrypted data sync</li>
+            <li style="list-style: disc; color: var(--color-text-secondary);"><strong>Supabase</strong> (cloud database) — for storing your account data, pet records, and uploaded photos</li>
+            <li style="list-style: disc; color: var(--color-text-secondary);"><strong>Sentry</strong> (error monitoring) — for collecting anonymized crash reports to improve app stability</li>
           </ul>
+          <p style="margin-top: var(--space-md); color: var(--color-text-secondary);">PetFiles does not include third-party analytics, advertising, or tracking SDKs. All third-party service providers listed above are contractually required to protect your data to the same or greater standard as described in this policy.</p>
+
+          <h3 style="font-size: var(--font-size-md); margin-bottom: var(--space-sm); margin-top: var(--space-xl);">Tracking</h3>
+          <p style="color: var(--color-text-secondary);">PetFiles does not track you across other companies' apps or websites. We do not use the Apple IDFA (Identifier for Advertisers) or any cross-app tracking mechanisms.</p>
         </section>
 
         <section>
@@ -181,15 +199,15 @@
           <ul style="padding-left: var(--space-2xl); display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-sm);">
             <li style="list-style: disc; color: var(--color-text-secondary);"><strong>Access</strong> all data stored about you</li>
             <li style="list-style: disc; color: var(--color-text-secondary);"><strong>Export</strong> your pet's health records from the app</li>
-            <li style="list-style: disc; color: var(--color-text-secondary);"><strong>Delete</strong> your account and all associated data</li>
-            <li style="list-style: disc; color: var(--color-text-secondary);"><strong>Opt out</strong> of cloud sync at any time</li>
+            <li style="list-style: disc; color: var(--color-text-secondary);"><strong>Delete</strong> your account and all associated data via the in-app account deletion feature (Settings &rarr; Account &rarr; Delete Account)</li>
+            <li style="list-style: disc; color: var(--color-text-secondary);"><strong>Withdraw consent</strong> for data collection at any time by deleting your account</li>
           </ul>
-          <p style="margin-top: var(--space-md);">To exercise any of these rights, contact us at <a href="mailto:owner@waywardsonsoftware.com">owner@waywardsonsoftware.com</a>.</p>
+          <p style="margin-top: var(--space-md);">To exercise any of these rights, use the in-app account management features or contact us at <a href="mailto:owner@waywardsonsoftware.com">owner@waywardsonsoftware.com</a>. We will process deletion requests within 30 days.</p>
         </section>
 
         <section>
           <h2 style="font-size: var(--font-size-xl); margin-bottom: var(--space-lg);">Children's Privacy</h2>
-          <p>PetFiles is not directed at children under 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, please contact us and we will delete it.</p>
+          <p>PetFiles is not directed at children under 13. In compliance with the Children's Online Privacy Protection Act (COPPA), we do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal data, please contact us and we will promptly delete it.</p>
         </section>
 
         <section>
