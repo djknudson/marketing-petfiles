@@ -25,6 +25,11 @@
 
   window.addEventListener('scroll', onScroll, { passive: true });
 
+  // On mobile, always show scrolled nav (no brand animation)
+  if (window.matchMedia('(max-width: 768px)').matches) {
+    nav.classList.add('nav--scrolled');
+  }
+
   /* ---- Mobile Menu ---- */
   const hamburger = document.querySelector('.nav__hamburger');
   const mobileMenu = document.querySelector('.nav__mobile');

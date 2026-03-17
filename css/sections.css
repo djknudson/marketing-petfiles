@@ -253,7 +253,7 @@
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding: var(--space-3xl) var(--space-lg);
+  padding: var(--space-5xl) var(--space-lg);
 }
 
 .carousel__track::-webkit-scrollbar {
@@ -516,6 +516,28 @@
 
   .device-frame {
     width: 220px;
+  }
+
+  /* Disable brand animation on mobile — render nav normally */
+  .hero__brand-spacer {
+    display: none;
+  }
+
+  .nav__brand {
+    transform: none !important;
+  }
+
+  .nav__brand img {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .nav__brand span {
+    font-size: var(--font-size-lg) !important;
+  }
+
+  .nav__brand {
+    gap: var(--space-sm) !important;
   }
 
   .footer__grid {

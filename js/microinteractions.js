@@ -29,7 +29,7 @@
   var brandImg = navBrand ? navBrand.querySelector('img') : null;
   var brandText = navBrand ? navBrand.querySelector('span') : null;
 
-  if (navBrand && spacer && badge && brandImg && brandText) {
+  if (navBrand && spacer && badge && brandImg && brandText && !window.matchMedia('(max-width: 768px)').matches) {
     // Nav links gap endpoints
     var LINKS_GAP_SM = 32;   // --space-3xl (starting)
     var LINKS_GAP_LG = 72;   // spread out (ending)
@@ -67,7 +67,7 @@
       var raw = Math.min(Math.max(y / 200, 0), 1);
 
       // Brand shrinks ahead of spacer — prevents badge/icon overlap
-      var bp = ease(Math.min(raw * 1.15, 1));
+      var bp = ease(Math.min(raw * 1.35, 1));
 
       // Spacer follows just behind — standard easing
       var sp = ease(raw);
@@ -127,7 +127,7 @@
 
   var track = document.querySelector('.carousel__track');
 
-  if (track) {
+  if (track && window.matchMedia('(hover: hover)').matches) {
     var slides = Array.from(track.querySelectorAll('.carousel__slide'));
     var frames = slides.map(function (s) { return s.querySelector('.device-frame'); });
 
@@ -187,16 +187,19 @@
     }
 
     // --- Mouse events for dock magnification ---
-    track.addEventListener('mousemove', function (e) {
-      hovering = true;
-      mouseX = e.clientX;
-      scheduleRefresh();
-    });
+    // Only enable dock hover on devices with hover capability (not touch)
+    if (window.matchMedia('(hover: hover)').matches) {
+      track.addEventListener('mousemove', function (e) {
+        hovering = true;
+        mouseX = e.clientX;
+        scheduleRefresh();
+      });
 
-    track.addEventListener('mouseleave', function () {
-      hovering = false;
-      scheduleRefresh();
-    });
+      track.addEventListener('mouseleave', function () {
+        hovering = false;
+        scheduleRefresh();
+      });
+    }
 
     // --- Scroll + resize for center-based scaling ---
     track.addEventListener('scroll', scheduleRefresh, { passive: true });

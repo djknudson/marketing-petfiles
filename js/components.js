@@ -127,4 +127,68 @@
     // Initialize
     updatePricing();
   }
+
+  /* ---- Screenshot Modal ---- */
+  var screenshotModal = null;
+  var screenshotModalImg = null;
+
+  function createScreenshotModal() {
+    screenshotModal = document.createElement('div');
+    screenshotModal.className = 'screenshot-modal';
+    screenshotModal.setAttribute('role', 'dialog');
+    screenshotModal.setAttribute('aria-label', 'Screenshot preview');
+
+    screenshotModalImg = document.createElement('img');
+    screenshotModalImg.className = 'screenshot-modal__img';
+    screenshotModal.appendChild(screenshotModalImg);
+
+    var closeBtn = document.createElement('button');
+    closeBtn.className = 'screenshot-modal__close';
+    closeBtn.setAttribute('aria-label', 'Close preview');
+    closeBtn.innerHTML = '&times;';
+    screenshotModal.appendChild(closeBtn);
+
+    document.body.appendChild(screenshotModal);
+
+    screenshotModal.addEventListener('click', function (e) {
+      if (e.target !== screenshotModalImg) {
+        closeScreenshotModal();
+      }
+    });
+
+    closeBtn.addEventListener('click', closeScreenshotModal);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && screenshotModal.classList.contains('active')) {
+        closeScreenshotModal();
+      }
+    });
+  }
+
+  function openScreenshotModal(src, alt) {
+    if (!screenshotModal) createScreenshotModal();
+    screenshotModalImg.src = src;
+    screenshotModalImg.alt = alt || 'Screenshot preview';
+    // Force reflow so the transition plays on first open
+    screenshotModal.offsetHeight;
+    screenshotModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeScreenshotModal() {
+    if (!screenshotModal) return;
+    screenshotModal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Attach click-to-expand on carousel slides
+  if (carouselTrack) {
+    carouselTrack.querySelectorAll('.carousel__slide').forEach(function (slide) {
+      slide.style.cursor = 'zoom-in';
+      slide.addEventListener('click', function () {
+        var img = slide.querySelector('.device-frame__screen img');
+        if (img) openScreenshotModal(img.src, img.alt);
+      });
+    });
+  }
 })();

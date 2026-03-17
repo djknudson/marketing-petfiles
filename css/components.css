@@ -223,7 +223,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--color-bg);
+  background-color: rgba(249, 248, 244, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
   padding: var(--space-3xl) var(--space-2xl);
   flex-direction: column;
   gap: var(--space-2xl);
@@ -237,6 +239,17 @@
   display: flex;
   opacity: 1;
   transform: translateY(0);
+}
+
+[data-theme="dark"] .nav__mobile,
+.dark .nav__mobile {
+  background-color: rgba(15, 18, 16, 0.72);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .nav__mobile {
+    background-color: rgba(15, 18, 16, 0.72);
+  }
 }
 
 .nav__mobile .nav__link {
@@ -512,6 +525,67 @@
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
   margin-top: var(--space-sm);
+}
+
+/* ---- Screenshot Modal ---- */
+.screenshot-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: zoom-out;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-base), visibility var(--transition-base);
+}
+
+.screenshot-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.screenshot-modal__img {
+  max-height: 90vh;
+  max-width: 90vw;
+  width: auto;
+  height: auto;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+  cursor: default;
+  transform: scale(0.92);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.screenshot-modal.active .screenshot-modal__img {
+  transform: scale(1);
+}
+
+.screenshot-modal__close {
+  position: absolute;
+  top: var(--space-2xl);
+  right: var(--space-2xl);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-2xl);
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.screenshot-modal__close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
 }
 
 /* ---- Muted footer link ---- */
