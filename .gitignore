@@ -12,7 +12,10 @@ Thumbs.db
 lighthouse-*
 
 # Claude
-.claude/settings.local.json
+.claude/
+
+# Agent OS
+agent-os/
 
 # Development artifacts
 SESSION_STATE.md
