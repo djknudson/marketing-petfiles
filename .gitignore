@@ -13,3 +13,7 @@ lighthouse-*
 
 # Claude
 .claude/settings.local.json
+
+# Development artifacts
+SESSION_STATE.md
+.mcp.json
